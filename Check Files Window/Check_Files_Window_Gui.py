@@ -4,8 +4,6 @@ import tkinter as tk
 
 import Check_Files_Window_Func
 
-
-
 def load_gui(self):
 
     

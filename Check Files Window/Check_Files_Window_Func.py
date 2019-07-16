@@ -15,24 +15,18 @@ def center_window(self, w, h):
     return centerGeo
 
 def ask_quit(self):
-    if tkinter.messagebox.askokcancel("Exit program", "You really wanna go?"):
+    if tkinter.messagebox.askokcancel("Exit program", "So you're done, huh?"):
         self.master.destroy()
         os._exit(0)
 
-def no_threats(self):
-    messagebox.showinfo("Files checked",  "No threats found.")
 
 
 def loadtemplate(self):
-    filename = filedialog.askopenfilename(filetypes=(("Template files", "*.tplate")
-                                                       , ("HTML files", "*.html;*.htm")
+    filename = filedialog.askdirectory(filetypes=(("Python Files", "*.py")
+                                                       , ("Database Files", "*.db")
                                                        , ("All files", "*.*")))
-    if filename:
-        try:
-            self.settings["template"].set(filename)
-        except:
-            messagebox.showerror("Open Source File", "Failed to read file \n'%s'" % filename)
-            return
+    return filename
+
 
 if __name__ == "__main__":
     pass
